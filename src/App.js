@@ -5,7 +5,6 @@ class App extends Component {
   render() {
     return (
       <Header />
-      <p
     );
   }
 }

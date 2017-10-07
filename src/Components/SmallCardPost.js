@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { css, cssFor } from "glamor";
+import { css } from "glamor";
 
 class SmallCardPost extends Component {
   render() {
@@ -8,7 +8,16 @@ class SmallCardPost extends Component {
         className={css({
           display: "flex",
           flexDirection: "column",
-          padding: "10px"
+          padding: "10px",
+          width: "370px"
+          // ":hover": {
+          //   backgroundColor: "white",
+          //   boxShadow: "0px 0px 20px skyblue",
+          //   border: "1px solid skyblue",
+          //   transform: "scale(1.05, 1.05)",
+          //   zIndex: "2",
+          //   transition: "0.2s ease-out"
+          // }
         })}
       >
         <div
@@ -20,9 +29,34 @@ class SmallCardPost extends Component {
           })}
         />
 
-        <p>REACT</p>
-        <p>Influencing The Influencer</p>
-        <p>Space The Final Frontier</p>
+        <p
+          className={css({
+            marginTop: "24px",
+            fontWeight: "bold",
+            letterSpacing: "3px",
+            lineHeight: "24px",
+            opacity: "0.5"
+          })}
+        >
+          REACT
+        </p>
+        <p
+          className={css({
+            fontSize: "1.5em"
+          })}
+        >
+          Influencing The Influencer
+        </p>
+        <p
+          className={css({
+            height: "58px",
+            marginTop: "7px",
+            fontWeight: "thin",
+            opacity: "0.5"
+          })}
+        >
+          Space The Final Frontier
+        </p>
 
         <div
           className={css({
@@ -44,7 +78,8 @@ class SmallCardPost extends Component {
           <div
             className={css({
               display: "flex",
-              flexDirection: "column"
+              flexDirection: "column",
+              alignSelf: "center"
             })}
           >
             <p>Walter Parker</p>

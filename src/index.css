@@ -1,5 +1,13 @@
-body, p {
+@import url("https://www.fontify.me/wf/7116669ff62ea6ce905b50766eaca6b8");
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+  font-family: font92731;
+}
+
+body,
+p {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }

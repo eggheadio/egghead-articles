@@ -23,11 +23,14 @@ class Header extends Component {
             justifyContent: "space-between"
           })}
         >
-          <img src="https://avatars2.githubusercontent.com/u/5975001?v=4&s=200" alt="logo"
-          className={css({
+          <img
+            src="https://avatars2.githubusercontent.com/u/5975001?v=4&s=200"
+            alt="logo"
+            className={css({
               height: "52px",
               width: "52px"
-          })} />
+            })}
+          />
           <button
             className={css({
               height: "40px",
@@ -41,8 +44,28 @@ class Header extends Component {
           </button>
         </div>
 
-        <h1>Making Programmers Badass</h1>
-        <h3>The Official Egghead.io Knowledge Hub</h3>
+        <p
+          className={css({
+            fontSize: "3em",
+            fontWeight: "500",
+            lineHeight: "53px",
+            marginTop: "54px"
+          })}
+        >
+          Making Programmers Badass
+        </p>
+
+        <p
+          className={css({
+            opacity: "0.6",
+            color: "#FFFFFF",
+            fontSize: "1.5em",
+            lineHeight: "32px",
+            marginTop: "20px"
+          })}
+        >
+          The Official Egghead.io Knowledge Hub
+        </p>
         <input
           type="text"
           className={css({
@@ -50,7 +73,9 @@ class Header extends Component {
             width: " 460px",
             backgroundColor: "#FFFFFF",
             alignSelf: "center",
-            paddingLeft: "48px"
+            paddingLeft: "48px",
+            marginTop: "40px",
+            fontSize: "15px"
           })}
           placeholder="Search posts, authors, courses,..."
         />

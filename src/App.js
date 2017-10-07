@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import Header from './Components/Header';
+// Import routing components
+import { Route } from "react-router";
+// Import pages
+import LandingPage from "./Pages/LandingPage";
 
 class App extends Component {
   render() {
     return (
-      <p> Hello world </p>
+      <div>
+        <Route exact path="/" component={LandingPage} />
+      </div>
     );
   }
 }

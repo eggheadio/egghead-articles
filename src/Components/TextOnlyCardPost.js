@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import { css } from "glamor";
 
 class SmallCardPost extends Component {
+  truncate = (data, max_letters) => {
+    if (data.length > max_letters) {
+      return data.slice(0, max_letters) + "...";
+    } else {
+      return data;
+    }
+  };
+
   render() {
     const {
       content,
@@ -29,15 +37,6 @@ class SmallCardPost extends Component {
           // }
         })}
       >
-        <div
-          className={css({
-            height: "240px",
-            width: "370px",
-            opacity: "0.1",
-            backgroundColor: "black"
-          })}
-        />
-
         <p
           className={css({
             marginTop: "24px",
@@ -57,15 +56,18 @@ class SmallCardPost extends Component {
         >
           {content.title}
         </p>
+
         <p
           className={css({
-            height: "58px",
-            marginTop: "7px",
-            fontWeight: "thin",
-            opacity: "0.5"
+            height: "175px",
+            width: "370px",
+            marginTop: "10px",
+            opacity: "0.5",
+            textAlign: "justify",
+            lineHeight: "24px"
           })}
         >
-          {content.subtitle}
+          {this.truncate(content.body, 300)}
         </p>
 
         <div
@@ -86,23 +88,23 @@ class SmallCardPost extends Component {
           />
 
           <div
-            className={css({
-              display: "flex",
-              flexDirection: "column",
-              alignSelf: "center",
-              marginLeft: "12px"
-            })}
-          >
-            <p className={css({
-              fontSize: "14px",
-              lineHeight: "20px"
-            })}>{author}</p>
-            <p className={css({
-              fontSize: "12px",
-              lineHeight: "20px",
-              opacity: "0.4"
-            })}>{formattedPublishedDate}</p>
-          </div>
+          className={css({
+            display: "flex",
+            flexDirection: "column",
+            alignSelf: "center",
+            marginLeft: "12px"
+          })}
+        >
+          <p className={css({
+            fontSize: "14px",
+            lineHeight: "20px"
+          })}>{author}</p>
+          <p className={css({
+            fontSize: "12px",
+            lineHeight: "20px",
+            opacity: "0.4"
+          })}>{formattedPublishedDate}</p>
+        </div>
         </div>
       </div>
     );

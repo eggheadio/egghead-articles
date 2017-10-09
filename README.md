@@ -1,5 +1,35 @@
 # egghead-articles
 
+models at http://www.objgen.com/json/models/Vzz
+
+model used at https://www.json-generator.com/ for the current data
+```
+[
+  '{{repeat(13)}}',
+  {
+ articleId: '{{guid()}}',
+  author: '{{firstName()}} {{surname()}}',
+  category: '{{random("typescript", "javascript", "react")}}',
+  tags: [
+      '{{repeat(3)}}',
+      '{{random("typescript", "javascript", "react")}}'
+    ],
+  isDraft: false,
+  updated: false,
+  images: {
+    largeImage: "url",
+    smallImage: "url"
+  },
+  publishedAt: '{{date(new Date())}}',
+  content: {
+    title: '{{random("Influencing the Influencer", "Using MobX with React", "Redux and React")}}',
+    subtitle:  '{{random("Influencing the Influencer", "Using MobX with React", "Redux and React")}}',
+    body: '{{lorem(10, "paragraphs")}}'
+  }
+  }
+]
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

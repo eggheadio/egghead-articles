@@ -2,13 +2,30 @@ import React, { Component } from "react";
 import { css } from "glamor";
 
 class LargeCardPost extends Component {
+  truncate = (data, max_letters) => {
+    if (data.length > max_letters) {
+      return data.slice(0, max_letters) + "...";
+    } else {
+      return data;
+    }
+  };
+
   render() {
+    const {
+      content,
+      images,
+      author,
+      category,
+      publishedAt,
+      formattedPublishedDate
+    } = this.props.article;
+
     return (
       <div
         className={css({
           display: "flex",
           flexDirection: "row",
-          margin: "10px",
+          margin: "10px"
           // ":hover": {
           //   backgroundColor: "white",
           //   boxShadow: "0px 0px 20px skyblue",
@@ -44,33 +61,31 @@ class LargeCardPost extends Component {
               fontWeight: "bold",
               letterSpacing: "3px",
               lineHeight: "24px",
-              opacity: "0.5"
+              opacity: "0.5",
+              fontSize: "12px"
             })}
           >
-            REACT
+            {category.toUpperCase()}
           </p>
           <p
             className={css({
               fontSize: "2em"
             })}
           >
-            Influencing The Influencer
+            {content.title}
           </p>
+
           <p
             className={css({
               fontWeight: "thin",
               opacity: "0.5",
               height: "290px",
               textAlign: "justify",
-              marginTop: "10px"
+              marginTop: "10px",
+              lineHeight: "24px"
             })}
           >
-            Audio player software is used to play back sound recordings in one
-            of the many formats available for computers today. It can also play
-            back music CDs. There is audio player software that is native to the
-            computer’s operating system (Windows, Macintosh, and Linux) and
-            there are web-based audio players. This article discusses the local
-            computer audio players.
+            {this.truncate(content.body, 500)}
           </p>
 
           <div
@@ -94,11 +109,28 @@ class LargeCardPost extends Component {
             <div
               className={css({
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                alignSelf: "center",
+                marginLeft: "12px"
               })}
             >
-              <p>Walter Parker</p>
-              <p>27 Jul 2017</p>
+              <p
+                className={css({
+                  fontSize: "14px",
+                  lineHeight: "20px"
+                })}
+              >
+                {author}
+              </p>
+              <p
+                className={css({
+                  fontSize: "12px",
+                  lineHeight: "20px",
+                  opacity: "0.4"
+                })}
+              >
+                {formattedPublishedDate}
+              </p>
             </div>
           </div>
         </div>

@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-// Import routing components
 import { Route } from "react-router";
-// Import pages
 import LandingPage from "./Pages/LandingPage";
+import Store from "./Stores/ArticelsStore";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/" component={LandingPage} />
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return <LandingPage store={Store.articles} />;
+          }}
+        />
       </div>
     );
   }

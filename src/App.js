@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Route } from "react-router";
 import LandingPage from "./Pages/LandingPage";
-import Store from "./Stores/ArticelsStore";
+
+import ArticleDetailPage from "./Pages/ArticleDetailPage";
+import Store from "./Stores/ArticleStore";
 
 class App extends Component {
   render() {
@@ -11,7 +13,7 @@ class App extends Component {
           exact
           path="/"
           render={() => {
-            return <LandingPage store={Store.articles} />;
+            return <ArticleDetailPage store={Store.articles[0]} />;
           }}
         />
       </div>

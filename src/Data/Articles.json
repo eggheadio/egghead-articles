@@ -17,7 +17,7 @@
     "publishedAt": "Mon Oct 09 2017 09:57:32 GMT+0530 (IST)",
     "content": {
       "title": "Influencing the Influencer",
-      "subtitle": "Influencing the Influencer",
+      "subtitle": "With electrical signals, simple cells organize themselves into complex societies and negotiate with other colonies. That’s something, right?",
       "body": "# Live demo\r\n\r\nChanges are automatically rendered as you type.\r\n\r\n* Follows the [CommonMark](http://commonmark.org/) spec\r\n* Renders actual, \"native\" React DOM elements\r\n* Allows you to escape or skip HTML (try toggling the checkboxes above)\r\n* If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!\r\n\r\n## HTML block below\r\n\r\n<blockquote>\r\n    This blockquote will change based on the HTML settings above.\r\n</blockquote>\r\n\r\n## How about some code?\r\n```js\r\nvar React = require('react');\r\nvar Markdown = require('react-markdown');\r\n\r\nReact.render(\r\n    <Markdown source=\"# Your markdown here\" />,\r\n    document.getElementById('content')\r\n);\r\n```\r\n\r\nPretty neat, eh?\r\n\r\n## More info?\r\n\r\nRead usage information and more on [GitHub](//github.com/rexxars/react-markdown)\r\n\r\n---------------\r\n\r\nA component by [VaffelNinja](http://vaffel.ninja) / Espen Hovlandsdal"
     }
   },

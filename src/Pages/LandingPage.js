@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { css } from "glamor";
 import { observer } from "mobx-react";
+import { withRouter, Link } from "react-router-dom";
 
 import Header from "./../Components/Header";
 import Paginator from "./../Components/Paginator";
@@ -11,13 +12,23 @@ import TopicsTabs from "./../Components/TopicsTabs";
 
 const LandingPageObserver = observer(
   class LandingPage extends Component {
+    navigateToArticle = id => {
+      console.log("object");
+      this.props.history.push("/article/" + id);
+    };
+
     componentWillReact() {
       console.log("I will re-render, since the observables changed!");
     }
 
     render() {
-      const articles = this.props.store;
-      console.log(articles);
+      const articles = this.props.store.articles;
+
+      console.log(this.props);
+
+      if (articles === undefined) {
+        return <h1> Loading.... </h1>;
+      }
 
       return (
         <div
@@ -48,11 +59,50 @@ const LandingPageObserver = observer(
           >
             {articles.map((article, index) => {
               if (index === 3) {
-                return <LargeCardPost article={article} />;
+                return (
+                  <div
+                  key={article.articleId}
+                    onClick={() => {
+                      this.navigateToArticle(article.articleId);
+                    }}
+                  >
+                    <LargeCardPost
+                      article={article}
+                      onClick={() => {
+                        this.navigateToArticle(article.articleId);
+                      }}
+                    />
+                  </div>
+                );
               } else if (index >= 10) {
-                return <TextOnlyCardPost article={article} />;
+                return (
+                  <div
+                  key={article.articleId}
+                    onClick={() => {
+                      this.navigateToArticle(article.articleId);
+                    }}
+                  >
+                    <TextOnlyCardPost
+                      article={article}
+                    />
+                  </div>
+                );
               } else {
-                return <SmallCardPost article={article} />;
+                return (
+                  <div
+                  key={article.articleId}
+                    onClick={() => {
+                      this.navigateToArticle(article.articleId);
+                    }}
+                  >
+                    <SmallCardPost
+                      article={article}
+                      onClick={() => {
+                        this.navigateToArticle(article.articleId);
+                      }}
+                    />
+                  </div>
+                );
               }
             })}
           </section>
@@ -72,4 +122,4 @@ const LandingPageObserver = observer(
   }
 );
 
-export default LandingPageObserver;
+export default withRouter(LandingPageObserver);

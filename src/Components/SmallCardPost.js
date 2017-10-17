@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { css } from "glamor";
 
+import { categoryTextStyle } from "./../Styles/TextStyles";
+
 class SmallCardPost extends Component {
   render() {
     const {
@@ -18,15 +20,11 @@ class SmallCardPost extends Component {
           display: "flex",
           flexDirection: "column",
           padding: "10px",
-          width: "370px"
-          // ":hover": {
-          //   backgroundColor: "white",
-          //   boxShadow: "0px 0px 20px skyblue",
-          //   border: "1px solid skyblue",
-          //   transform: "scale(1.05, 1.05)",
-          //   zIndex: "2",
-          //   transition: "0.2s ease-out"
-          // }
+          width: "370px",
+          ":hover": {
+            boxShadow: "0px 0px 2px lightgray",
+            cursor: "pointer"
+          }
         })}
       >
         <div
@@ -38,18 +36,7 @@ class SmallCardPost extends Component {
           })}
         />
 
-        <p
-          className={css({
-            marginTop: "24px",
-            fontWeight: "bold",
-            letterSpacing: "3px",
-            lineHeight: "24px",
-            opacity: "0.5",
-            fontSize: "12px"
-          })}
-        >
-          {category.toUpperCase()}
-        </p>
+        <p className={categoryTextStyle}>{category.toUpperCase()}</p>
         <p
           className={css({
             fontSize: "1.5em"
@@ -71,7 +58,8 @@ class SmallCardPost extends Component {
         <div
           className={css({
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
+            marginTop: "20px"
           })}
         >
           <div
@@ -93,15 +81,23 @@ class SmallCardPost extends Component {
               marginLeft: "12px"
             })}
           >
-            <p className={css({
-              fontSize: "14px",
-              lineHeight: "20px"
-            })}>{author}</p>
-            <p className={css({
-              fontSize: "12px",
-              lineHeight: "20px",
-              opacity: "0.4"
-            })}>{formattedPublishedDate}</p>
+            <p
+              className={css({
+                fontSize: "14px",
+                lineHeight: "20px"
+              })}
+            >
+              {author}
+            </p>
+            <p
+              className={css({
+                fontSize: "12px",
+                lineHeight: "20px",
+                opacity: "0.4"
+              })}
+            >
+              {formattedPublishedDate}
+            </p>
           </div>
         </div>
       </div>

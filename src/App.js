@@ -5,6 +5,7 @@ import { Provider, observer } from "mobx-react";
 import ScrollToTop from "./Components/ScrollToTop";
 import LandingPage from "./Pages/LandingPage";
 import ArticleDetailPage from "./Pages/ArticleDetailPage";
+import PricingPage from "./Pages/PricingPage";
 
 import Store from "./Stores/ArticleStore";
 import { loadArticles } from "./Services/ArticleService";
@@ -39,6 +40,10 @@ const App = observer(
                   return <ArticleDetailPage store={Store} {...props} />;
                 }}
               />
+              <Route exact path="/pricing">
+                <PricingPage />
+              </Route>
+
             </div>
           </ScrollToTop>
         </Router>

@@ -13,13 +13,29 @@ import TopicsTabs from "./../Components/TopicsTabs";
 const LandingPageObserver = observer(
   class LandingPage extends Component {
     navigateToArticle = id => {
-      console.log("object");
       this.props.history.push("/article/" + id);
     };
 
     componentWillReact() {
       console.log("I will re-render, since the observables changed!");
     }
+
+    componentWillMount() {
+      this.setState({ width: window.innerWidth });
+    }
+
+    componentDidMount() {
+      window.addEventListener("resize", this.updateDimensions);
+    }
+    componentWillUnmount() {
+      window.removeEventListener("resize", this.updateDimensions);
+    }
+
+    updateDimensions = () => {
+      this.setState({ width: window.innerWidth });
+      console.log("dimensions updated");
+      console.log(this.state);
+    };
 
     render() {
       const articles = this.props.store.articles;
@@ -58,10 +74,10 @@ const LandingPageObserver = observer(
             })}
           >
             {articles.map((article, index) => {
-              if (index === 3) {
+              if (index === 3 && this.state.width > 1200) {
                 return (
                   <div
-                  key={article.articleId}
+                    key={article.articleId}
                     onClick={() => {
                       this.navigateToArticle(article.articleId);
                     }}
@@ -77,20 +93,18 @@ const LandingPageObserver = observer(
               } else if (index >= 10) {
                 return (
                   <div
-                  key={article.articleId}
+                    key={article.articleId}
                     onClick={() => {
                       this.navigateToArticle(article.articleId);
                     }}
                   >
-                    <TextOnlyCardPost
-                      article={article}
-                    />
+                    <TextOnlyCardPost article={article} />
                   </div>
                 );
               } else {
                 return (
                   <div
-                  key={article.articleId}
+                    key={article.articleId}
                     onClick={() => {
                       this.navigateToArticle(article.articleId);
                     }}

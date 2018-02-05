@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { css } from "glamor";
 import { categoryTextStyle } from "./../Styles/TextStyles";
+import { articleTitle } from "./../Styles/TextStyles";
+import { articleSubtitle } from "./../Styles/TextStyles";
+import { authorName } from "./../Styles/TextStyles";
+import { publishedDate } from "./../Styles/TextStyles";
 
 class LargeCardPost extends Component {
   truncate = (data, max_letters) => {
@@ -26,20 +30,25 @@ class LargeCardPost extends Component {
         className={css({
           display: "flex",
           flexDirection: "row",
-          padding: "10px",
-          ":hover": {
-            boxShadow: "0px 0px 2px lightgray",
+          margin: "30px",        
+            ":hover": {
             cursor: "pointer"
-          }
+            }
         })}
       >
         <div
           className={css({
             width: "760px",
-            height: "500px",
-            opacity: "0.1",
-            backgroundColor: "black",
-            marginLeft: "10px"
+            height: "480px",
+            borderRadius: "5px",
+            background: "url(https://d1ax1i5f2y3x71.cloudfront.net/items/0r3U0r2o0B440134371f/largeThumbnail.png?X-CloudApp-Visitor-Id=2697228&v=e8e7dac0) 50% 50% no-repeat white",
+            backgroundSize: "760px",
+            borderRadius: "5px",
+            transition: "all 0.2s ease-in-out",
+              ":hover": {
+              backgroundSize: "105%",
+              transition: "all 0.2s ease-in-out",
+              }
           })}
         />
 
@@ -47,8 +56,7 @@ class LargeCardPost extends Component {
           className={css({
             display: "flex",
             flexDirection: "column",
-            marginLeft: "32px",
-            marginTop: "24px",
+            marginLeft: "40px",
             width: "370px"
           })}
         >
@@ -57,23 +65,14 @@ class LargeCardPost extends Component {
           >
             {category.toUpperCase()}
           </p>
-          <p
-            className={css({
-              fontSize: "2em"
-            })}
+          <h3
+            className={articleTitle}
           >
             {content.title}
-          </p>
+          </h3>
 
           <p
-            className={css({
-              fontWeight: "thin",
-              opacity: "0.5",
-              height: "290px",
-              textAlign: "justify",
-              marginTop: "10px",
-              lineHeight: "24px"
-            })}
+            className={articleSubtitle}
           >
             {this.truncate(content.body, 500)}
           </p>
@@ -89,9 +88,9 @@ class LargeCardPost extends Component {
               className={css({
                 height: "40px",
                 width: "40px",
-                border: "1px solid #D8D8D8",
-                backgroundColor: "#D8D8D8",
-                borderRadius: "32px",
+                background: "url(https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/142/original/225933_5138711211_6220_n.jpg) 50% 50% no-repeat gray",
+                backgroundSize: "40px",
+                borderRadius: "20px",
                 marginRight: "10px"
               })}
             />
@@ -105,19 +104,12 @@ class LargeCardPost extends Component {
               })}
             >
               <p
-                className={css({
-                  fontSize: "14px",
-                  lineHeight: "20px"
-                })}
+                className={authorName}
               >
                 {author}
               </p>
               <p
-                className={css({
-                  fontSize: "12px",
-                  lineHeight: "20px",
-                  opacity: "0.4"
-                })}
+                className={publishedDate}
               >
                 {formattedPublishedDate}
               </p>

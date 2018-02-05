@@ -1,13 +1,22 @@
 @import url("https://www.fontify.me/wf/7116669ff62ea6ce905b50766eaca6b8");
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+  /* font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
     "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
     sans-serif;
-  font-family: font92731;
+  font-family: font92731; */
+  font-family:'Kievit OT W01 Book', -apple-system, BlinkMacSystemFont, San Francisco, Helvetica neue, helvetica, roboto, noto, arial, sans-serif;
+  color: #2B2B2B;
+    background-color: white;
 }
 
 body,
 p {
   margin: 0;
   padding: 0;
+}
+
+button {
+  padding-top: 5px;
+  font-size: 13px;
 }

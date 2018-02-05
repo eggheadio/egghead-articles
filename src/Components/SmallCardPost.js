@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { css } from "glamor";
+import { tachyons } from "tachyons-egghead";
 
 import { categoryTextStyle } from "./../Styles/TextStyles";
+import { articleTitle } from "./../Styles/TextStyles";
+import { articleSubtitle } from "./../Styles/TextStyles";
+import { authorName } from "./../Styles/TextStyles";
+import { publishedDate } from "./../Styles/TextStyles";
+
 
 class SmallCardPost extends Component {
   render() {
@@ -19,10 +25,9 @@ class SmallCardPost extends Component {
         className={css({
           display: "flex",
           flexDirection: "column",
-          padding: "10px",
-          width: "370px",
+          margin: "20px",
+          width: "360px",
           ":hover": {
-            boxShadow: "0px 0px 2px lightgray",
             cursor: "pointer"
           }
         })}
@@ -30,28 +35,32 @@ class SmallCardPost extends Component {
         <div
           className={css({
             height: "240px",
-            width: "370px",
-            opacity: "0.1",
-            backgroundColor: "black"
+            width: "360px",
+            background: "url(https://d1ax1i5f2y3x71.cloudfront.net/items/0h431L1m1g0H3w2B1R1E/article-thumbnail-placeholder@2x.png) 50% 50% no-repeat white",
+            backgroundSize: "360px",
+            borderRadius: "5px",
+            transition: "all 0.2s ease-in-out",
+            ":hover": {
+            backgroundSize:"105%",
+            transition: "all 0.2s ease-in-out"
+          }
           })}
         />
-
+        
+        <div
+         className={css({
+            padding: "0 20px 0 20px"
+        })}
+        >
+            
+                     
         <p className={categoryTextStyle}>{category.toUpperCase()}</p>
-        <p
-          className={css({
-            fontSize: "1.5em"
-          })}
-        >
+        <h3  
+          className={articleTitle}>
           {content.title}
-        </p>
+        </h3>
         <p
-          className={css({
-            height: "58px",
-            marginTop: "7px",
-            fontWeight: "thin",
-            opacity: "0.5"
-          })}
-        >
+          className={articleSubtitle}>
           {content.subtitle}
         </p>
 
@@ -59,45 +68,37 @@ class SmallCardPost extends Component {
           className={css({
             display: "flex",
             flexDirection: "row",
-            marginTop: "20px"
+            marginTop: "40px",
           })}
-        >
+          >
           <div
             className={css({
               height: "40px",
               width: "40px",
-              border: "1px solid #D8D8D8",
-              backgroundColor: "#D8D8D8",
-              borderRadius: "32px",
+              background: "url(https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/142/original/225933_5138711211_6220_n.jpg) 50% 50% no-repeat gray",
+              backgroundSize: "40px",
+              borderRadius: "20px",
               marginRight: "10px"
             })}
-          />
+            />
 
           <div
             className={css({
               display: "flex",
               flexDirection: "column",
-              alignSelf: "center",
-              marginLeft: "12px"
+              alignSelf: "center"
             })}
-          >
-            <p
-              className={css({
-                fontSize: "14px",
-                lineHeight: "20px"
-              })}
             >
+            <p
+              className={authorName}>
               {author}
             </p>
             <p
-              className={css({
-                fontSize: "12px",
-                lineHeight: "20px",
-                opacity: "0.4"
-              })}
+              className={publishedDate}
             >
               {formattedPublishedDate}
             </p>
+            </div>
           </div>
         </div>
       </div>

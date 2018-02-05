@@ -71,7 +71,6 @@ const FaqQna = ({ question, answer }) => (
 const PricingPageObserver = observer(
   class PricingPage extends Component {
     componentWillReact() {
-      console.log("I will re-render, since the observables changed!");
     }
 
     render() {

@@ -4,9 +4,12 @@ import { observer } from "mobx-react";
 
 import ReactMarkdown from "react-markdown";
 import ArticleHeader from "./../Components/ArticleHeader";
-import SmallCardPost from "./../Components/SmallCardPost";
+import SmallCardPost from "./../Components/SmallCardPost"
+
 
 import { categoryTextStyle } from "./../Styles/TextStyles";
+import { articleBody } from "./../Styles/TextStyles";
+
 
 const ArticleDetailPage = observer(
   class ArticleDetailPageCompoenet extends Component {
@@ -15,13 +18,10 @@ const ArticleDetailPage = observer(
     };
 
     componentDidMount() {
-      console.log("article page rendered");
     }
 
     render() {
-      console.log(this.props);
       const id = this.props.match.params.id;
-      console.log(id);
       const article = this.props.store.articles.find(
         article => article.articleId === id
       );
@@ -65,7 +65,8 @@ const ArticleDetailPage = observer(
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
+              marginTop: "50px"
             })}
           >
             <a
@@ -116,14 +117,7 @@ const ArticleDetailPage = observer(
 
           {/* //#region: markdown */}
           <div
-            className={css({
-              marginTop: "72px",
-              marginLeft: "72px",
-              marginRight: "72px",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around"
-            })}
+            className={articleBody}
           >
             <div
               className={css({
@@ -299,7 +293,7 @@ const ArticleDetailPage = observer(
                   display: "flex",
                   justifyContent: "space-between",
                   paddingLeft: "10px",
-                  paddingRight: "10px"
+                  paddingRight: "10px",
                 })}
               >
                 <h1>More posts tagged React</h1>

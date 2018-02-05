@@ -7,9 +7,9 @@ const PaginatorLink = glamorous.a({
   textDecorationColor: "black",
   marginRight: "10px",
   marginLeft: "10px",
-  padding: "5px 10px 5px 10px",
-  height: "32px",
-  width: "32px",
+  height: "60px",
+  width: "60px",
+  padding: "15px 20px 15px 20px",
   ":link": {
     color: "black"
   },
@@ -17,7 +17,7 @@ const PaginatorLink = glamorous.a({
     color: "black"
   },
   ":hover":{
-    border: "1px solid lightgray"
+    backgroundColor: "#F5F5F5"
   }
 });
 
@@ -26,7 +26,7 @@ const PaginatorUL = glamorous.div({
 });
 
 const activeStyle = css({
-  border: "1px solid black !important"
+  backgroundColor: "#F5F5F5 !important"
 });
 
 class Paginator extends Component {
@@ -35,8 +35,8 @@ class Paginator extends Component {
       <PaginatorUL>
         <button
           className={css({
-            height: "32px",
-            width: "48px",
+            height: "60px",
+            width: "60px",
             opacity: "0.2",
             backgroundColor: "#000000",
             border: "none"
@@ -54,8 +54,8 @@ class Paginator extends Component {
         <PaginatorLink href="#">15</PaginatorLink>
         <button
           className={css({
-            height: "32px",
-            width: "48px",
+            height: "60px",
+            width: "60px",
             opacity: "0.4",
             backgroundColor: "#000000",
             border: "none"

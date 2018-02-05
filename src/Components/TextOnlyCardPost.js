@@ -26,10 +26,10 @@ class SmallCardPost extends Component {
         className={css({
           display: "flex",
           flexDirection: "column",
-          padding: "10px",
-          width: "370px",
+
+        padding: "0 20px 0 20px",
+        margin: "20px",
           ":hover": {
-            boxShadow: "0px 0px 2px lightgray",
             cursor: "pointer"
           }
         })}
@@ -46,10 +46,10 @@ class SmallCardPost extends Component {
         <p
           className={css({
             height: "175px",
-            width: "370px",
+            width: "320px",
             marginTop: "10px",
             opacity: "0.5",
-            textAlign: "justify",
+            textAlign: "left",
             lineHeight: "24px"
           })}
         >
@@ -59,7 +59,8 @@ class SmallCardPost extends Component {
         <div
           className={css({
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
+            marginTop: "20px"
           })}
         >
           <div
@@ -68,7 +69,7 @@ class SmallCardPost extends Component {
               width: "40px",
               border: "1px solid #D8D8D8",
               backgroundColor: "#D8D8D8",
-              borderRadius: "32px",
+              borderRadius: "20px",
               marginRight: "10px"
             })}
           />

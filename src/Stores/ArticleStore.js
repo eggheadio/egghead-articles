@@ -13,7 +13,6 @@ class ArticleStore {
       return article;
     })
     this.articles = observable(this.articles);
-    console.log(this.articles);
   });
 }
 

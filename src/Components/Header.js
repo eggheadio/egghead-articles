@@ -7,22 +7,24 @@ class Header extends Component {
       <div
         className={css({
           height: "430px",
-          backgroundColor: "gray",
+          backgroundColor: "#F5F5F5",
           paddingTop: "32px",
           paddingRight: "180px",
           paddingLeft: "180px",
-          color: "white",
+          color: "#232323",
           display: "flex",
           flexDirection: "column",
           textAlign: "center"
         })}
-      >
+        >
         <div
           className={css({
             display: "flex",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+              verticalAlign: "middle",
+              alignItems: "center"
           })}
-        >
+          >
           <img
             src="https://avatars2.githubusercontent.com/u/5975001?v=4&s=200"
             alt="logo"
@@ -31,18 +33,57 @@ class Header extends Component {
               width: "52px"
             })}
           />
-          <button
+        
+          <div
+           className={css({
+                  alignItems: "center",
+               display: "flex"
+           })}  
+          >
+                 
+         <div
+           className={css({
+           background: "url(https://cl.ly/nrl2/download/search.svg) no-repeat",
+           backgroundPosition: "50% 50%",
+           width: "20px",
+           height: "20px",
+           marginRight: "20px",
+           padding: "20px",
+           transition: "all 0.2s ease-in-out",
+           ":hover": {
+            cursor: "pointer",
+            backgroundSize: "64%",
+            transition: "all 0.2s ease-in-out"
+            }
+           })}
+           />
+           
+{ /* region: subscribe button  
+
+         <button
             className={css({
               height: "40px",
               width: "140px",
               backgroundColor: "transparent",
-              border: "1px solid #FFFFFF",
-              color: "white"
+              border: "2px solid #E9E9E9",
+              color: "#232323",
+              cursor: "pointer",
+              transition: "all 0.2s ease-in-out",
+               ":hover": {
+                 background: "white",
+                 border: "2px solid white",
+                 transition: "all 0.2s ease-in-out",
+                 }
             })}
           >
             SUBSCRIBE
           </button>
-        </div>
+          
+#end-region: subscribe button */}
+
+
+         </div>          
+         </div>
 
         <p
           className={css({
@@ -58,7 +99,7 @@ class Header extends Component {
         <p
           className={css({
             opacity: "0.6",
-            color: "#FFFFFF",
+            color: "#232323",
             fontSize: "1.5em",
             lineHeight: "32px",
             marginTop: "20px"
@@ -75,7 +116,7 @@ class Header extends Component {
             alignSelf: "center",
             paddingLeft: "48px",
             marginTop: "40px",
-            fontSize: "15px"
+            fontSize: "15px",
           })}
           placeholder="Search posts, authors, courses,..."
         />

@@ -24,7 +24,6 @@ const App = observer(
       return (
         <Router
           onUpdate={() => {
-            console.log("updated router");
             window.scrollTo(0, 0);
           }}
         >
